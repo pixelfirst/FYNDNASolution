@@ -39,7 +39,7 @@ body {
 h1.page-title {
     position: absolute;
     top: 50%;
-    transform: translateY(-100%);
+    transform: translateY(-190%);
     margin: 0;
     left: 50px;
     font-size: 32px;
@@ -113,7 +113,7 @@ button.control {
             //transform: rotate(45deg);
             transform-origin: center center;
             filter: drop-shadow(0px 2px 1px rgba(0,0,0,0.1));
-            transition: transform  ease  var(--transition-duration);
+            transition: transform ease var(--transition-duration);
             cursor: pointer;
 
             &.item-circle-one {
@@ -152,7 +152,7 @@ button.control {
         .item-circle-text {
             //transform: rotate(45deg);
             //transform-origin: center center;
-            transition: transform  ease   var(--transition-duration), opacity linear var(--transition-duration);
+            transition: transform ease var(--transition-duration), opacity linear var(--transition-duration);
             font-family: 'Gellix-Bold';
             font-size: 10.3px;
             font-weight: 700;
@@ -206,7 +206,7 @@ button.control {
 
         .group-item-circle-text {
             transform-origin: center center;
-            transition: transform  ease   var(--transition-duration);
+            transition: transform ease var(--transition-duration);
 
             &.group-item-circle-text-one {
                 transform: rotate(calc(0deg + var(--circle-rotation)));
@@ -299,7 +299,7 @@ button.control {
                     width: 0%;
                     display: block;
                     background-image: linear-gradient(to right, #4c48ff, #2aa3ff);
-                    transition: width  ease  0.25s var(--transition-duration);
+                    transition: width ease 0.25s var(--transition-duration);
                     transform: translateX(-50%);
                     left: 50%;
                     position: relative;
@@ -323,7 +323,7 @@ button.control {
                             padding-top: 10px;
                             opacity: 0;
                             margin-top: -10px;
-                            transition: all  ease  0.25s calc(var(--transition-duration) + 0.25s);
+                            transition: all ease 0.25s calc(var(--transition-duration) + 0.25s);
 
                             strong {
                                 font-weight: 700;
@@ -340,7 +340,7 @@ button.control {
                             margin: auto;
                             transform: translateX(0px);
                             background-image: linear-gradient(to bottom, #4c48ff, #2aa3ff);
-                            transition: height  ease  0.25s calc(var(--transition-duration) + 0.25s);
+                            transition: height ease 0.25s calc(var(--transition-duration) + 0.25s);
                         }
                     }
                 }
@@ -382,16 +382,18 @@ button.control {
 
 @media screen and (max-width:700px) {
     .wheel-section {
-      //  padding-left: 40px;
-       // padding-right: 40px;
+        //  padding-left: 40px;
+        // padding-right: 40px;
     }
 
     button.control {
         width: 40px;
-        height: 40px; background-size:80%;
+        height: 40px;
+        background-size: 80%;
     }
-    .wheel-and-controls{
-        padding-left:40px;
-        padding-right:40px;
+
+    .wheel-and-controls {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }

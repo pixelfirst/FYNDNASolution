@@ -6,7 +6,7 @@ var icon_image_bottom = document.querySelector('#ImageBottom');
 
 var item_circle_text_groups = document.querySelectorAll(".group-item-circle-text");
 
-var icon_css_transition_property = "y cubic-bezier(0.075, 0.82, 0.165, 1) var(--transition-duration)";
+var icon_css_transition_property = "y ease var(--transition-duration)";
 var branches = document.querySelectorAll('.branches .branch');
 var currentBranch = branches[0]
 var currentDegree = 0;
@@ -71,10 +71,9 @@ function showCurrentBranch() {
     currentBranch.classList.remove('spread');
     clearTimeout(branchTimeout);
     branchTimeout = setTimeout(function () {
-
         currentBranch = branches[currentItemIndex];
         currentBranch.classList.add('spread');
-    }, 600);
+    }, 1);
 }
 
 
@@ -83,25 +82,33 @@ function itemClickHandler() {
 
     if (clickedIndex == currentItemIndex) return;
 
-
-
-
-
     var distanceToClickedIndexFromCurrentIndex = clockwiseDistanceBetweenArrayIndexes(currentItemIndex, clickedIndex, max);
 
     currentItemIndex = clickedIndex;
 
-    
+
 
     if (distanceToClickedIndexFromCurrentIndex < 4) {
         currentDegree = currentDegree - (rotateByDegree * distanceToClickedIndexFromCurrentIndex);
         wheelDirection = "backward";
-        document.documentElement.style.setProperty("--transition-duration", `${distanceToClickedIndexFromCurrentIndex}s`);
+
+        var duration = distanceToClickedIndexFromCurrentIndex;
+
+        if (duration != 1)
+            duration = duration / 2;
+
+        document.documentElement.style.setProperty("--transition-duration", `${duration}s`);
     }
     else {
         currentDegree = currentDegree + (rotateByDegree * (max - distanceToClickedIndexFromCurrentIndex));
         wheelDirection = "forward";
-        document.documentElement.style.setProperty("--transition-duration", `${max-distanceToClickedIndexFromCurrentIndex}s`);
+
+        var duration = max - distanceToClickedIndexFromCurrentIndex;
+
+        if (duration != 1)
+            duration = duration / 2;
+
+        document.documentElement.style.setProperty("--transition-duration", `${duration}s`);
     }
 
 
@@ -132,12 +139,14 @@ function doIconSpin() {
 
 
         prevIcon.style.transition = "none";
-        prevIcon.setAttributeNS(null, "y", "252.5");
+        prevIcon.setAttributeNS(null, "y", "205");
         prevIcon.style.transition = icon_css_transition_property;
 
         setTimeout(function () {
-            prevIcon.setAttributeNS(null, "y", "385");
-            nextIconIn.setAttributeNS(null, "y", "252.5");
+            //prevIcon.setAttributeNS(null, "y", "385");
+            //nextIconIn.setAttributeNS(null, "y", "252.5");
+            prevIcon.setAttributeNS(null, "y", "395");
+            nextIconIn.setAttributeNS(null, "y", "205");
         }, 1)
     }
     else if (wheelDirection == "forward") {
@@ -158,13 +167,17 @@ function doIconSpin() {
 
 
         prevIcon.style.transition = "none";
-        prevIcon.setAttributeNS(null, "y", "252.5");
+        prevIcon.setAttributeNS(null, "y", "205");
         prevIcon.style.transition = icon_css_transition_property;
 
         setTimeout(function () {
-            nextIconIn.setAttributeNS(null, "y", "252.5");
+            //nextIconIn.setAttributeNS(null, "y", "252.5");
 
-            prevIcon.setAttributeNS(null, "y", "100");
+            //prevIcon.setAttributeNS(null, "y", "100");
+
+            nextIconIn.setAttributeNS(null, "y", "205");
+
+            prevIcon.setAttributeNS(null, "y", "15");
         }, 1);
     }
 }
@@ -175,12 +188,12 @@ function clockwiseDistanceBetweenArrayIndexes(from, to, size) {
 
 function getNextIconIn() {
     var icon_image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-    icon_image.setAttributeNS(null, "width", "80");
-    icon_image.setAttributeNS(null, "height", "80");
-    icon_image.setAttributeNS(null, "x", "245");
+    icon_image.setAttributeNS(null, "width", "160");
+    icon_image.setAttributeNS(null, "height", "160");
+    icon_image.setAttributeNS(null, "x", "205");
 
     icon_image.style.transition = icon_css_transition_property;
-    icon_image.setAttributeNS(null, "y", (wheelDirection == "forward" ? "385" : "90"));
+    icon_image.setAttributeNS(null, "y", (wheelDirection == "forward" ? "425" : "50"));
 
     return icon_image;
 }
@@ -193,4 +206,5 @@ itemCircles.forEach(function (_item) {
 });
 
 
-doSpin(0);
+//doSpin(0);
+spinBackward();

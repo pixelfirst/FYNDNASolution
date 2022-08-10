@@ -13,7 +13,6 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 725px;
     // height: 725px;
     font-size: 1.6rem;
     font-family: 'Gellix-Bold';
@@ -22,6 +21,7 @@ body {
     background-position: center center;
     background-size: cover;
     position: relative;
+    
 }
 
 * {
@@ -36,14 +36,19 @@ body {
     --transition-duration: 1s;
 }
 
+.container {
+    min-height: 725px;
+    position: relative;
+}
+
 h1.page-title {
     position: absolute;
-    top: 50%;
-    transform: translateY(-190%);
+    top: 325px;
+    //transform: translateY(-60px);
     margin: 0;
     left: 50px;
     font-size: 32px;
-    line-height: 1em;
+    line-height: normal;
 }
 
 @media screen and (max-width:1400px) {
@@ -91,7 +96,7 @@ button.control {
 .wheel-section {
     max-width: 800px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto 0 auto;
     // background: pink;
     // height: 725px;
     position: relative;
@@ -149,20 +154,61 @@ button.control {
             }
         }
 
+        .group-inner-item-circle-text {
+            transition: transform ease var(--transition-duration);
+            font-family: 'Gellix-Bold';
+            font-size: 10px;
+            font-weight: 700;
+            opacity: 0.6;
+            pointer-events: none;
+            transform-origin: 285px 500px;
+
+            &.group-inner-item-circle-text-one {
+                transform: rotate(calc(0deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-two {
+                transform: rotate(calc(-45deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-three {
+                transform: rotate(calc(-90deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-four {
+                transform: rotate(calc(-135deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-five {
+                transform: rotate(calc(-180deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-six {
+                transform: rotate(calc(-225deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-seven {
+                transform: rotate(calc(-270deg - var(--circle-rotation)));
+            }
+
+            &.group-inner-item-circle-text-eight {
+                transform: rotate(calc(-315deg - var(--circle-rotation)));
+            }
+        }
+
         .item-circle-text {
             //transform: rotate(45deg);
             //transform-origin: center center;
-            transition: transform ease var(--transition-duration), opacity linear var(--transition-duration);
+            transition: transform ease var(--transition-duration), opacity ease var(--transition-duration);
             font-family: 'Gellix-Bold';
             font-size: 10.3px;
             font-weight: 700;
             opacity: 0.6;
             pointer-events: none;
-
-
+            /*
 
             &.item-circle-text-one {
-                transform: rotate(calc(0deg - var(--circle-rotation)));
+                //transform: rotate(calc(0deg - var(--circle-rotation)));
             }
 
             &.item-circle-text-two {
@@ -191,7 +237,7 @@ button.control {
 
             &.item-circle-text-eight {
                 transform: rotate(calc(-315deg - var(--circle-rotation)));
-            }
+            }*/
         }
 
         .active-circle {
@@ -395,5 +441,33 @@ button.control {
     .wheel-and-controls {
         padding-left: 40px;
         padding-right: 40px;
+    }
+
+    .wheel-section .branches-wrapper {
+        margin-top: -3px;
+
+        .branch-connector {
+            width: 1.5px;
+        }
+
+        .branches {
+            .branch {
+                &:before {
+                    height: 1.5px;
+                }
+
+                .items {
+                    .item {
+                        .text {
+                            font-size: 10px;
+                        }
+
+                        &:before {
+                            width: 1.5px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

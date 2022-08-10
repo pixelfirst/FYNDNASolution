@@ -166,7 +166,7 @@ function doIconSpin() {
         nextIconIn.style.transition = icon_css_transition_property;
 
 
-        prevIcon.style.transition = "none";
+       // prevIcon.style.transition = "none";
         prevIcon.setAttributeNS(null, "y", "205");
         prevIcon.style.transition = icon_css_transition_property;
 
@@ -207,4 +207,4 @@ itemCircles.forEach(function (_item) {
 
 
 //doSpin(0);
-spinBackward();
+document.querySelector(".control.prev").click();

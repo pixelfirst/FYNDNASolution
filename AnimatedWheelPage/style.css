@@ -12,7 +12,6 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 725px;
   font-size: 1.6rem;
   font-family: "Gellix-Bold";
   font-weight: 700;
@@ -32,14 +31,18 @@ body {
   --transition-duration: 1s;
 }
 
+.container {
+  min-height: 725px;
+  position: relative;
+}
+
 h1.page-title {
   position: absolute;
-  top: 50%;
-  transform: translateY(-190%);
+  top: 325px;
   margin: 0;
   left: 50px;
   font-size: 32px;
-  line-height: 1em;
+  line-height: normal;
 }
 
 @media screen and (max-width: 1400px) {
@@ -83,7 +86,7 @@ button.control.next {
 .wheel-section {
   max-width: 800px;
   width: 100%;
-  margin: auto;
+  margin: 0 auto 0 auto;
   position: relative;
   padding-top: 62px;
 }
@@ -127,37 +130,79 @@ button.control.next {
 .wheel-section svg .item-circle.item-circle-eight {
   transform: rotate(calc(315deg + var(--circle-rotation)));
 }
+.wheel-section svg .group-inner-item-circle-text {
+  transition: transform ease var(--transition-duration);
+  font-family: "Gellix-Bold";
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.6;
+  pointer-events: none;
+  transform-origin: 285px 500px;
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-one {
+  transform: rotate(calc(0deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-two {
+  transform: rotate(calc(-45deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-three {
+  transform: rotate(calc(-90deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-four {
+  transform: rotate(calc(-135deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-five {
+  transform: rotate(calc(-180deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-six {
+  transform: rotate(calc(-225deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-seven {
+  transform: rotate(calc(-270deg - var(--circle-rotation)));
+}
+.wheel-section svg .group-inner-item-circle-text.group-inner-item-circle-text-eight {
+  transform: rotate(calc(-315deg - var(--circle-rotation)));
+}
 .wheel-section svg .item-circle-text {
-  transition: transform ease var(--transition-duration), opacity linear var(--transition-duration);
+  transition: transform ease var(--transition-duration), opacity ease var(--transition-duration);
   font-family: "Gellix-Bold";
   font-size: 10.3px;
   font-weight: 700;
   opacity: 0.6;
   pointer-events: none;
-}
-.wheel-section svg .item-circle-text.item-circle-text-one {
-  transform: rotate(calc(0deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-two {
-  transform: rotate(calc(-45deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-three {
-  transform: rotate(calc(-90deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-four {
-  transform: rotate(calc(-135deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-five {
-  transform: rotate(calc(-180deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-six {
-  transform: rotate(calc(-225deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-seven {
-  transform: rotate(calc(-270deg - var(--circle-rotation)));
-}
-.wheel-section svg .item-circle-text.item-circle-text-eight {
-  transform: rotate(calc(-315deg - var(--circle-rotation)));
+  /*
+
+  &.item-circle-text-one {
+      //transform: rotate(calc(0deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-two {
+      transform: rotate(calc(-45deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-three {
+      transform: rotate(calc(-90deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-four {
+      transform: rotate(calc(-135deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-five {
+      transform: rotate(calc(-180deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-six {
+      transform: rotate(calc(-225deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-seven {
+      transform: rotate(calc(-270deg - var(--circle-rotation)));
+  }
+
+  &.item-circle-text-eight {
+      transform: rotate(calc(-315deg - var(--circle-rotation)));
+  }*/
 }
 .wheel-section svg .active-circle {
   pointer-events: none;
@@ -311,5 +356,21 @@ button.control.next {
   .wheel-and-controls {
     padding-left: 40px;
     padding-right: 40px;
+  }
+
+  .wheel-section .branches-wrapper {
+    margin-top: -3px;
+  }
+  .wheel-section .branches-wrapper .branch-connector {
+    width: 1.5px;
+  }
+  .wheel-section .branches-wrapper .branches .branch:before {
+    height: 1.5px;
+  }
+  .wheel-section .branches-wrapper .branches .branch .items .item .text {
+    font-size: 10px;
+  }
+  .wheel-section .branches-wrapper .branches .branch .items .item:before {
+    width: 1.5px;
   }
 }

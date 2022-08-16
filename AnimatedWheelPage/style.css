@@ -347,6 +347,10 @@ button.control.next {
 }
 
 @media screen and (max-width: 700px) {
+  .wheel-section {
+    padding-top: 20px;
+  }
+
   button.control {
     width: 40px;
     height: 40px;
@@ -354,6 +358,7 @@ button.control.next {
     position: static;
     margin: 0 10px;
     display: inline-block;
+    transform: none;
   }
 
   .wheel-and-controls {

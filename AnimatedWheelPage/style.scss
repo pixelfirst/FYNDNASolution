@@ -429,6 +429,7 @@ button.control {
     .wheel-section {
         //  padding-left: 40px;
         // padding-right: 40px;
+        padding-top: 20px;
     }
 
     button.control {
@@ -438,11 +439,12 @@ button.control {
         position: static;
         margin: 0 10px;
         display: inline-block;
+        transform: none;
     }
 
     .wheel-and-controls {
-        padding-left:  0px;
-        padding-right:  0px;
+        padding-left: 0px;
+        padding-right: 0px;
         text-align: center;
     }
 

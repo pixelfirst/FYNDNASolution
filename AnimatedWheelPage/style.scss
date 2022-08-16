@@ -21,7 +21,6 @@ body {
     background-position: center center;
     background-size: cover;
     position: relative;
-    
 }
 
 * {
@@ -436,11 +435,15 @@ button.control {
         width: 40px;
         height: 40px;
         background-size: 80%;
+        position: static;
+        margin: 0 10px;
+        display: inline-block;
     }
 
     .wheel-and-controls {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left:  0px;
+        padding-right:  0px;
+        text-align: center;
     }
 
     .wheel-section .branches-wrapper {

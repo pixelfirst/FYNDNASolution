@@ -69,6 +69,7 @@ button.control {
   outline: none;
   background-color: transparent;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 button.control.prev {
   left: 0;

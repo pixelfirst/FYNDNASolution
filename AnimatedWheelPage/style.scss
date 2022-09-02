@@ -43,7 +43,7 @@ body {
 
 h1.page-title {
     position: absolute;
-    top: 325px;
+    top: 290px;
     //transform: translateY(-60px);
     margin: 0;
     left: 50px;
@@ -96,6 +96,7 @@ button.control {
 
 .wheel-section {
     max-width: 800px;
+    max-width: 760px;
     width: 100%;
     margin: 0 auto 0 auto;
     // background: pink;
@@ -109,6 +110,7 @@ button.control {
         display: block;
         max-width: 100%;
         height: auto;
+        width:500px;
 
 
         .central-circle-one {
